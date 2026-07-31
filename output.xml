@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-07-31T15:58:04.404631" rpa="false" schemaversion="5">
+<suite id="s1" name="EmployeeCRUD" source="C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\tests\EmployeeCRUD.robot">
+<kw name="Create Employee Session" owner="common" type="SETUP">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-07-31T15:58:04.612488" level="INFO">&amp;{headers} = { Accept=application/json | Content-Type=application/json | User-Agent=Chrome/ 151.0.7922.72 }</msg>
+<var>&amp;{headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<arg>User-Agent=Chrome/ 151.0.7922.72</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-07-31T15:58:04.611492" elapsed="0.000996"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-07-31T15:58:04.612488" level="INFO">Creating Session using : alias=EmployeeSession, url=https://dummy.restapiexample.com/api/v1, headers={'Accept': 'application/json', 'Content-Type': 'application/json', 'User-Agent': 'Chrome/ 151.0.7922.72'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>${SESSION}</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-07-31T15:58:04.612488" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>API Session Created Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T15:58:04.613584" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-07-31T15:58:04.611492" elapsed="0.002092"/>
+</kw>
+<test id="s1-t1" name="Verify Employee CRUD Operations" line="11">
+<kw name="Get All Employees" owner="keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-07-31T15:58:37.567180" level="INFO">GET Request : url=https://dummy.restapiexample.com/api/v1/employees 
+ path_url=/api/v1/employees 
+ headers={'User-Agent': 'Chrome/ 151.0.7922.72', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2026-07-31T15:58:37.567180" level="INFO">GET Response : url=https://dummy.restapiexample.com/api/v1/employees 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 31 Jul 2026 10:28:37 GMT', 'Server': 'nginx/1.29.8', 'Content-Type': 'application/json', 'Content-Length': '636', 'Cache-Control': 'no-cache, private', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'X-Server-Cache': 'true', 'X-Proxy-Cache': 'MISS'} 
+ body={"status":"success","data":[{"id":1,"employee_name":"Tiger Nixon","employee_salary":320800,"employee_age":61,"profile_image":""},{"id":2,"employee_name":"Garrett Winters","employee_salary":170750,"employee_age":63,"profile_image":""},{"id":3,"employee_name":"Ashton Cox","employee_salary":86000,"employee_age":66,"profile_image":""},{"id":4,"employee_name":"Cedric Kelly","employee_salary":433060,"employee_age":22,"profile_image":""},{"id":5,"employee_name":"Airi Satou","employee_salary":162700,"employee_age":33,"profile_image":""},{"id":6,"employee_name":"Brielle Williamson","employee_salary":372000,"employee_age":61,"profile_image":""},{"id":7,"employee_name":"Herrod Chandler","employee_salary":137500,"employee_age":59,"profile_image":""},{"id":8,"employee_name":"Rhona Davidson","employee_salary":327900,"employee_age":55,"profile_image":""},{"id":9,"employee_name":"Colleen Hurst","employee_salary":205500,"employee_age":39,"profile_image":""},{"id":10,"employee_name":"Sonya Frost","employee_salary":103600,"employee_age":23,"profile_image":""},{"id":11,"employee_name":"Jena Gaines","employee_salary":90560,"employee_age":30,"profile_image":""},{"id":12,"employee_name":"Quinn Flynn","employee_salary":342000,"employee_age":22,"profile_image":""},{"id":13,"employee_name":"Charde Marshall","employee_salary":470600,"employee_age":36,"profile_image":""},{"id":14,"employee_name":"Haley Kennedy","employee_salary":313500,"employee_age":43,"profile_image":""},{"id":15,"employee_name":"Tatyana Fitzpatrick","employee_salary":385750,"employee_age":19,"profile_image":""},{"id":16,"employee_name":"Michael Silva","employee_salary":198500,"employee_age":66,"profile_image":""},{"id":17,"employee_name":"Paul Byrd","employee_salary":725000,"employee_age":64,"profile_image":""},{"id":18,"employee_name":"Gloria Little","employee_salary":237500,"employee_age":59,"profile_image":""},{"id":19,"employee_name":"Bradley Greer","employee_salary":132000,"employee_age":41,"profile_image":""},{"id":20,"employee_name":"Dai Rios","employee_salary":217500,"employee_age":35,"profile_image":""},{"id":21,"employee_name":"Jenette Caldwell","employee_salary":345000,"employee_age":30,"profile_image":""},{"id":22,"employee_name":"Yuri Berry","employee_salary":675000,"employee_age":40,"profile_image":""},{"id":23,"employee_name":"Caesar Vance","employee_salary":106450,"employee_age":21,"profile_image":""},{"id":24,"employee_name":"Doris Wilder","employee_salary":85600,"employee_age":23,"profile_image":""}],"message":"Successfully! All records has been fetched."} 
+ </msg>
+<msg time="2026-07-31T15:58:37.568180" level="INFO">C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\.venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummy.restapiexample.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\.venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummy.restapiexample.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-07-31T15:58:37.568180" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${SESSION}</arg>
+<arg>/employees</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-07-31T15:58:04.614538" elapsed="32.954669"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T15:58:37.569207" elapsed="0.001986"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T15:58:37.571193" elapsed="0.001990"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-07-31T15:58:37.575096" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-07-31T15:58:37.573183" elapsed="0.001913"/>
+</kw>
+<status status="PASS" start="2026-07-31T15:58:04.613584" elapsed="32.961512"/>
+</kw>
+<kw name="Get Employee By ID" owner="keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-07-31T15:59:39.719154" level="INFO">GET Request : url=https://dummy.restapiexample.com/api/v1/employee/1 
+ path_url=/api/v1/employee/1 
+ headers={'User-Agent': 'Chrome/ 151.0.7922.72', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2026-07-31T15:59:39.719154" level="INFO">GET Response : url=https://dummy.restapiexample.com/api/v1/employee/1 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 31 Jul 2026 10:29:39 GMT', 'Server': 'nginx/1.29.8', 'Content-Type': 'application/json', 'Content-Length': '152', 'Cache-Control': 'no-cache, private', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'X-Server-Cache': 'true', 'X-Proxy-Cache': 'MISS'} 
+ body={"status":"success","data":{"id":1,"employee_name":"Tiger Nixon","employee_salary":320800,"employee_age":61,"profile_image":""},"message":"Successfully! Record has been fetched."} 
+ </msg>
+<msg time="2026-07-31T15:59:39.720184" level="INFO">C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\.venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummy.restapiexample.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\.venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummy.restapiexample.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-07-31T15:59:39.720184" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${SESSION}</arg>
+<arg>/employee/${id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-07-31T15:58:37.577094" elapsed="62.143090"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T15:59:39.721109" elapsed="0.001996"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-07-31T15:59:39.724107" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-07-31T15:59:39.723105" elapsed="0.001002"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2026-07-31T15:58:37.576108" elapsed="62.147999"/>
+</kw>
+<kw name="Create Employee" owner="keywords">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2026-07-31T15:59:39.725181" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\payloads\CreateEmployee.json"&gt;C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\payloads\CreateEmployee.json&lt;/a&gt;'.</msg>
+<msg time="2026-07-31T15:59:39.727096" level="INFO">${body} = {
+    "name": "Sanjana patil",
+    "salary": "50000",
+    "age": "26"
+}</msg>
+<var>${body}</var>
+<arg>C:\\Users\\sanjana.patil\\PycharmProjects\\RobotFramework_API\\resources/../payloads/CreateEmployee.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2026-07-31T15:59:39.725181" elapsed="0.001915"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-07-31T15:59:39.728098" level="INFO">${body} = {'name': 'Sanjana patil', 'salary': '50000', 'age': '26'}</msg>
+<var>${body}</var>
+<arg>json.loads('''${body}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-07-31T15:59:39.727096" elapsed="0.001002"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-07-31T15:59:39.729098" level="INFO">&amp;{headers} = { Content-Type=application/json | Accept=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-07-31T15:59:39.729098" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-07-31T15:59:44.730633" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-07-31T15:59:39.729098" elapsed="5.001535"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-07-31T15:59:45.605680" level="INFO">POST Request : url=https://dummy.restapiexample.com/api/v1/create 
+ path_url=/api/v1/create 
+ headers={'User-Agent': 'Chrome/ 151.0.7922.72', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"name": "Sanjana patil", "salary": "50000", "age": "26"}' 
+ </msg>
+<msg time="2026-07-31T15:59:45.605680" level="INFO">POST Response : url=https://dummy.restapiexample.com/api/v1/create 
+ status=429, reason=Too Many Requests 
+ headers={'Date': 'Fri, 31 Jul 2026 10:29:45 GMT', 'Server': 'Apache', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '57', 'Retry-After': '54', 'X-RateLimit-Reset': '1785493839', 'Cache-Control': 'no-cache, private', 'Upgrade': 'h2,h2c', 'Connection': 'Upgrade', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Content-Length': '57', 'Content-Type': 'application/json'} 
+ body={
+    "message": "Too Many Attempts."
+} 
+ </msg>
+<msg time="2026-07-31T15:59:45.606724" level="INFO">C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\.venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummy.restapiexample.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-07-31T15:59:45.606724" level="INFO">${response} = &lt;Response [429]&gt;</msg>
+<var>${response}</var>
+<arg>${SESSION}</arg>
+<arg>/create</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-07-31T15:59:44.731149" elapsed="0.875575"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T15:59:45.606724" elapsed="0.002028"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T15:59:45.608752" elapsed="0.001928"/>
+</kw>
+<if>
+<branch type="IF" condition="${response.status_code} == 429">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Too many requests received. Waiting 30 seconds before retry...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T15:59:45.611641" elapsed="0.001013"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-07-31T16:00:15.614097" level="INFO">Slept 30 seconds.</msg>
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-07-31T15:59:45.612654" elapsed="30.001443"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-07-31T16:00:16.454906" level="INFO">POST Request : url=https://dummy.restapiexample.com/api/v1/create 
+ path_url=/api/v1/create 
+ headers={'User-Agent': 'Chrome/ 151.0.7922.72', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"name": "Sanjana patil", "salary": "50000", "age": "26"}' 
+ </msg>
+<msg time="2026-07-31T16:00:16.454906" level="INFO">POST Response : url=https://dummy.restapiexample.com/api/v1/create 
+ status=429, reason=Too Many Requests 
+ headers={'Date': 'Fri, 31 Jul 2026 10:30:16 GMT', 'Server': 'Apache', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '56', 'Retry-After': '23', 'X-RateLimit-Reset': '1785493839', 'Cache-Control': 'no-cache, private', 'Upgrade': 'h2,h2c', 'Connection': 'Upgrade', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Content-Length': '57', 'Content-Type': 'application/json'} 
+ body={
+    "message": "Too Many Attempts."
+} 
+ </msg>
+<msg time="2026-07-31T16:00:16.454906" level="INFO">C:\Users\sanjana.patil\PycharmProjects\RobotFramework_API\.venv\Lib\site-packages\urllib3\connectionpool.py:1110: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dummy.restapiexample.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-07-31T16:00:16.456821" level="INFO">${response} = &lt;Response [429]&gt;</msg>
+<var>${response}</var>
+<arg>${SESSION}</arg>
+<arg>/create</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-07-31T16:00:15.614097" elapsed="0.842724"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Retry Status Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T16:00:16.457812" elapsed="0.000999"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-07-31T16:00:16.459873" elapsed="0.001025"/>
+</kw>
+<status status="PASS" start="2026-07-31T15:59:45.610680" elapsed="30.850218"/>
+</branch>
+<status status="PASS" start="2026-07-31T15:59:45.610680" elapsed="30.851229"/>
+</if>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-07-31T16:00:16.462891" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2026-07-31T16:00:16.462891" level="FAIL">429 != 200</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="FAIL" start="2026-07-31T16:00:16.461909" elapsed="0.001984">429 != 200</status>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${json}</var>
+<arg>$response.json()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-07-31T16:00:16.463893" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${id}</var>
+<arg>${json["data"]["id"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-07-31T16:00:16.463893" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${EMPLOYEE_ID}</arg>
+<arg>${id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2026-07-31T16:00:16.463893" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Employee Created Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-07-31T16:00:16.464896" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Employee ID: ${EMPLOYEE_ID}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-07-31T16:00:16.464896" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-07-31T15:59:39.724107" elapsed="36.740789">429 != 200</status>
+</kw>
+<kw name="Update Employee" owner="keywords">
+<status status="NOT RUN" start="2026-07-31T16:00:16.465899" elapsed="0.000000"/>
+</kw>
+<kw name="Delete Employee" owner="keywords">
+<status status="NOT RUN" start="2026-07-31T16:00:16.466811" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-07-31T15:58:04.613584" elapsed="131.853227">429 != 200</status>
+</test>
+<doc>Employee CRUD API Testing</doc>
+<status status="FAIL" start="2026-07-31T15:58:04.406601" elapsed="132.062207"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="EmployeeCRUD" id="s1" pass="0" fail="1" skip="0">EmployeeCRUD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
